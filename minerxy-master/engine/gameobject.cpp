@@ -7,8 +7,8 @@ void PlaneRender::OnUpdate()
 	SDL_SetRenderDrawColor(renderer, 0, 0, 255, SDL_ALPHA_OPAQUE);
 	rect.w = planeWidth;
 	rect.h = planeHeight;
-	rect.x = parentGameObject->transform.x - mainCamera.transform.x;
-	rect.y = parentGameObject->transform.y - mainCamera.transform.y;
+	rect.x = parentGameObject->transform.position.x - mainCamera.transform.position.x;
+	rect.y = parentGameObject->transform.position.y - mainCamera.transform.position.y;
 	SDL_RenderFillRect(renderer, &rect);
 }
 
@@ -66,8 +66,8 @@ RQuad::RQuad(QuadRender* parent) : parentComponent{ parent }
 void RQuad::Render()
 {
 	QuadRender* p = parentComponent;
-	float x = p->parentGameObject->transform.x - mainCamera.transform.x;
-	float y = p->parentGameObject->transform.y - mainCamera.transform.y;
+	float x = p->parentGameObject->transform.position.x - (p->planeWidth / 2 ) - mainCamera.transform.position.x;
+	float y = p->parentGameObject->transform.position.y - (p->planeHeight / 2) - mainCamera.transform.position.y;
 
 
 	p->vert[0].position = { x,y };

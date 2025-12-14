@@ -35,19 +35,19 @@ SDL_AppResult SDL_AppEvent(void* appstate, SDL_Event* event)
 {
     if (event->key.scancode == SDL_SCANCODE_W)
     {
-        mainCamera.transform.y -= 10;
+        mainCamera.transform.position.y -= 10;
     }
     if (event->key.scancode == SDL_SCANCODE_S)
     {
-        mainCamera.transform.y += 10;
+        mainCamera.transform.position.y += 10;
     }
     if (event->key.scancode == SDL_SCANCODE_A)
     {
-        mainCamera.transform.x -= 10;
+        mainCamera.transform.position.x -= 10;
     }
     if (event->key.scancode == SDL_SCANCODE_D)
     {
-        mainCamera.transform.x += 10;
+        mainCamera.transform.position.x += 10;
     }
     if (event->type == SDL_EVENT_QUIT) {
         return SDL_APP_SUCCESS;

@@ -17,7 +17,7 @@ struct Component;
 class GameObject
 {
 public:	
-	Vector2				transform;
+	Transform				transform;
 	template<class T>
 		requires std::derived_from<T, Component>
 	T* AddComponent()
@@ -44,15 +44,6 @@ public:
 	GameObject*				parentGameObject;
 };
 
-
-
-
-// -- Unused -- 
-struct Transform : Component
-{
-public:
-	Vector2				transform;
-};
 
 
 struct PlaneRender : Component

@@ -14,8 +14,8 @@ void Init()
 {
 	InitRenderPipeline();
 	CreateTextureFromBMP("terrain", "terrain.bmp");
-	mainCamera.transform.x -= windowWidth / 2;
-	mainCamera.transform.y -= windowHeight / 2;
+	mainCamera.transform.position.x -= windowWidth / 2;
+	mainCamera.transform.position.y -= windowHeight / 2;
 
 	auto background = GameObject::CreateGameObject();
 	background->AddComponent<QuadRender>();
